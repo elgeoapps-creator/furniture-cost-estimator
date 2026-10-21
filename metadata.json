@@ -1,0 +1,6 @@
+{
+  "name": "Atelier Quote - Furniture & Room Cost Estimator",
+  "description": "Estimate furniture costs based on room dimensions, curated item selection, floor coverage analysis, and instant quote generation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

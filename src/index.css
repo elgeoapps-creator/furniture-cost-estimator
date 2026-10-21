@@ -1,0 +1,66 @@
+/**
+ * ============================================================================
+ * GLOBAL STYLES & ARCHITECTURAL TYPOGRAPHY
+ * ============================================================================
+ * Imports Tailwind CSS, configures editorial serif typography for luxury
+ * architectural feel (Playfair Display) and clean modern sans-serif for UI
+ * metrics (Plus Jakarta Sans), along with print styling rules for quote export.
+ */
+
+@import "tailwindcss";
+
+@layer base {
+  /* Default body styles and typography */
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    color: #1c1917;
+    background-color: #faf8f5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Editorial headings with classic architectural serif styling */
+  h1, h2, h3, h4, .font-serif {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+}
+
+/* Print Stylesheet for Professional Client Quote & Proposal PDF Export */
+@media print {
+  /* Set clean paper dimensions and margins for quote export */
+  @page {
+    size: A4 portrait;
+    margin: 12mm 15mm;
+  }
+
+  html, body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  /* Hide background application elements, headers, drawers, banners, and interactive controls */
+  header,
+  footer,
+  main,
+  .print\:hidden {
+    display: none !important;
+  }
+
+  /* Ensure background colors and borders are faithfully rendered in print */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Prevent awkward page splits inside the quote document */
+  table, tr, td, th {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+}
+
